@@ -25,9 +25,9 @@ make_zip()
     latest $1
 
     if [[ $? -eq 0 ]]; then
-        cd $ROOT_DIR
-        rm -rf $2 && \
-        tar zcf $2 laravel/*
+        cd $ROOT_DIR && \
+        rm -f $2 && \
+        tar zcvf $2 laravel/*
         rm -rf laravel
     fi
 }
