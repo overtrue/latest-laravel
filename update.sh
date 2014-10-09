@@ -9,6 +9,7 @@ cd $ROOT_DIR
 latest()
 {
     rm -rf laravel
+    echo "branch:$1\n";
     git clone https://github.com/laravel/laravel && git checkout $1
 }
 
@@ -35,5 +36,5 @@ make_zip "master" $MASTER_FILE
 make_zip "develop" $DEVELOP_FILE
 
 git add -A
-git commit -am "update@$(date +%Y-%m-%d_%H%M%S)"
+git commit -am "update@$(date +%Y_%m_%d_%H%M%S)"
 git push
