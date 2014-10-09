@@ -13,16 +13,10 @@ latest()
     echo ""
     echo "branch:$1";
     git clone https://github.com/laravel/laravel && \
-    cd laravel && git checkout $1 install && \
+    cd laravel && git checkout $1 && composer install && \
     cd $ROOT_DIR
 }
 
-install()
-{
-    if [[ $? -eq 0 ]]; then
-        composer install
-    fi
-}
 
 make_zip()
 {
@@ -36,8 +30,20 @@ make_zip()
     fi
 }
 
+check_error()
+{
+    if [[ $? != 0 ]]; then
+        exit
+    fi
+}
+
 make_zip "master" $MASTER_FILE
+
+check_error
+
 make_zip "develop" $DEVELOP_FILE
+
+check_error
 
 git add -A
 git commit -am "update@$(date +%Y_%m_%d_%H%M%S)"
