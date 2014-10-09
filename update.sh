@@ -1,7 +1,7 @@
 ROOT_DIR=/root/latest-laravel/
 
 #filename
-MASTER_FILE="laravel-4.2.tar.gz"
+MASTER_FILE="laravel-master.tar.gz"
 DEVELOP_FILE="laravel-5.0.tar.gz"
 
 cd $ROOT_DIR
@@ -31,7 +31,7 @@ make_zip()
     fi
 }
 
-make_zip "4.2" $MASTER_FILE
+make_zip "master" $MASTER_FILE
 make_zip "develop" $DEVELOP_FILE
 
 git add -A
