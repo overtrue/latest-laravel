@@ -12,7 +12,9 @@ latest()
     echo ""
     echo ""
     echo "branch:$1";
-    git clone https://github.com/laravel/laravel && cd laravel && git checkout $1 && cd $ROOT_DIR
+    git clone https://github.com/laravel/laravel && \
+    cd laravel && git checkout $1 install && \
+    cd $ROOT_DIR
 }
 
 install()
