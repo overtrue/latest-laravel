@@ -19,7 +19,6 @@ install()
     fi
 }
 
-
 make_zip()
 {
     latest $1
