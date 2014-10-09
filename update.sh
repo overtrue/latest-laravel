@@ -24,16 +24,15 @@ make_zip()
     latest $1
 
     if [[ $? -eq 0 ]]; then
-        rm -rf $ROOT_DIR/$2 && \
-        tar zcf $ROOT_DIR/$2 laravel/
+        cd $ROOT_DIR
+        rm -rf $2 && \
+        tar zcf $2 laravel/*
         rm -rf laravel
     fi
 }
 
 make_zip "4.2" $MASTER_FILE
 make_zip "develop" $DEVELOP_FILE
-
-cd -
 
 git add -A
 git commit -am "update@$(date +%Y-%m-%d_%H%M%S)"
