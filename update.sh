@@ -9,7 +9,9 @@ cd $ROOT_DIR
 latest()
 {
     rm -rf laravel
-    echo "branch:$1\n";
+    echo ""
+    echo ""
+    echo "branch:$1";
     git clone https://github.com/laravel/laravel && git checkout $1
 }
 
