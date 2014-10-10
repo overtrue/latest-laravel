@@ -5,8 +5,8 @@ Latest-laravel
 
 - 本项目主要解决以下问题：
 
-    1. 不会用`composer`或者不太会用；
-    2. `composer` 装不上或者装上了但是`composer install`特别慢。
+    - 不会用`composer`或者不太会用；
+    - `composer` 装不上或者装上了但是`composer install`特别慢。
 
 - 更新频率：
     > 每天上午 :clock830:`8:30`
