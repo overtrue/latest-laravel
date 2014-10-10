@@ -52,6 +52,7 @@ commit_zip()
     echo "当前目录:`pwd`"
     git add -A && \
     git commit -am "update@$(date +%Y-%m-%d_%H%M%S)" && \
+    git pull && \
     git push
 }
 
