@@ -1,34 +1,15 @@
+#!/bin/bash
+# Latest-laravel 更新脚本
+# @author Carlos <anzhengchao@gmail.com>
+# @link   http://github.com/overtrue
+
+
 # latest-laravel
 SCRIPT_DIR=/root/latest-laravel/scripts
 
 #filename
 MASTER_FILE="laravel-master.tar.gz"
 DEVELOP_FILE="laravel-develop.tar.gz"
-
-cd $SCRIPT_DIR
-
-# master
-master_output=$(make_zip "master" $MASTER_FILE)
-
-if [[ $? -eq 0 ]]; then
-    echo $master_output > output
-fi
-
-# master
-develop_output=$(make_zip "develop" $DEVELOP_FILE)
-
-if [[ $? -eq 0 ]]; then
-    echo $develop_output > output
-fi
-
-check_and_commit
-
-if [[ -f "./output" ]]; then
-    report_error
-    echo "*** 上报错误完成！ ***"
-fi
-
-####### functions #######
 
 # 更新并安装
 latest_and_install()
@@ -84,3 +65,27 @@ report_error()
 {
     `node reporter.js`
 }
+
+
+cd $SCRIPT_DIR
+
+# master
+master_output=$(make_zip "master" $MASTER_FILE)
+
+if [[ $? -eq 0 ]]; then
+    echo $master_output > output
+fi
+
+# master
+develop_output=$(make_zip "develop" $DEVELOP_FILE)
+
+if [[ $? -eq 0 ]]; then
+    echo $develop_output > output
+fi
+
+check_and_commit
+
+if [[ -f "./output" ]]; then
+    report_error
+    echo "*** 上报错误完成！ ***"
+fi
