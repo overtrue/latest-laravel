@@ -1,3 +1,4 @@
+# latest-laravel
 ROOT_DIR=/root/latest-laravel/
 
 #filename
@@ -6,34 +7,41 @@ DEVELOP_FILE="laravel-5.0.tar.gz"
 
 cd $ROOT_DIR
 
-latest()
+# 更新并安装
+latest_and_install()
 {
     rm -rf laravel
     echo ""
-    echo ""
+    echo "*** 切换分支：$1***"
     echo "branch:$1";
     git clone https://github.com/laravel/laravel && \
     cd laravel && git checkout $1 && composer install && \
     cd $ROOT_DIR
 }
 
-
+# 打包
 make_zip()
 {
-    latest $1
+    latest_and_install $1
 
     if [[ $? -eq 0 ]]; then
+        echo "*** 开始打包：$2 ***"
         cd $ROOT_DIR && \
         rm -f $2 && \
         tar zcvf $2 laravel/*
         rm -rf laravel
+        echo "*** 打包完毕：$2 ***"
     fi
 }
 
+# 检查错误并提交
 check_error()
 {
     if [[ $? != 0 ]]; then
-        exit
+        echo "*** 错误：$? ***"
+        report_error && exit
+    else
+        commit_zip
     fi
 }
 
@@ -41,12 +49,13 @@ check_error()
 commit_zip()
 {
     cd $ROOT_DIR
-    echo "current dir:" pwd
-    git add -A
-    git commit -am "update@$(date +%Y_%m_%d_%H%M%S)"
+    echo "当前目录:" pwd
+    git add -A && \
+    git commit -am "update@$(date +%Y-%m-%d %H%M%S)" && \
     git push
 }
 
+# 报告错误(issue)
 report_error()
 {
     `node reporter.js`
