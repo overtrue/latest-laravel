@@ -9,7 +9,7 @@ Latest-laravel
     2. `composer` 装不上或者装上了但是`composer install`特别慢。
 
 - 更新频率：
-    每天上午 :clock830:`8:30`
+    > 每天上午 :clock830:`8:30`
 
 - Laravel 分支
     - `master` 也就是目前的4.2, 对应包名： `laravel-master.tar.gz`
