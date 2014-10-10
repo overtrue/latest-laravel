@@ -1,11 +1,11 @@
 # latest-laravel
-ROOT_DIR=/root/latest-laravel/
+SCRIPT_DIR=/root/latest-laravel/scripts
 
 #filename
 MASTER_FILE="laravel-master.tar.gz"
-DEVELOP_FILE="laravel-5.0.tar.gz"
+DEVELOP_FILE="laravel-develop.tar.gz"
 
-cd $ROOT_DIR
+cd $SCRIPT_DIR
 
 # 更新并安装
 latest_and_install()
@@ -16,7 +16,7 @@ latest_and_install()
     echo "branch:$1";
     git clone https://github.com/laravel/laravel && \
     cd laravel && git checkout $1 && composer install && \
-    cd $ROOT_DIR
+    cd $SCRIPT_DIR
 }
 
 # 打包
@@ -26,7 +26,7 @@ make_zip()
 
     if [[ $? -eq 0 ]]; then
         echo "*** 开始打包：$2 ***"
-        cd $ROOT_DIR && \
+        cd $SCRIPT_DIR && \
         rm -f $2 && \
         tar zcvf $2 laravel/*
         rm -rf laravel
@@ -48,7 +48,7 @@ check_error()
 # 提交到latest-laravel
 commit_zip()
 {
-    cd $ROOT_DIR
+    cd $SCRIPT_DIR
     echo "当前目录:`pwd`"
     git add -A && \
     git commit -am "update@$(date +%Y-%m-%d_%H%M%S)" && \
