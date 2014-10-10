@@ -6,6 +6,7 @@
 
 # latest-laravel
 SCRIPT_DIR=/root/latest-laravel/scripts
+ROOT_DIR=${SCRIPT_DIR}/../
 
 #filename
 MASTER_FILE="laravel-master.tar.gz"
@@ -14,13 +15,13 @@ DEVELOP_FILE="laravel-develop.tar.gz"
 # 更新并安装
 latest_and_install()
 {
+    cd $ROOT_DIR/
     rm -rf laravel
     echo ""
     echo "*** 切换分支：$1 ***"
     echo "branch:$1";
     git clone https://github.com/laravel/laravel && \
-    cd laravel && git checkout $1 && composer install && \
-    cd $SCRIPT_DIR
+    cd laravel && git checkout $1 && composer install
 }
 
 # 打包
@@ -30,7 +31,7 @@ make_zip()
 
     if [[ $? -eq 0 ]]; then
         echo "*** 开始打包：$2 ***"
-        cd $SCRIPT_DIR && \
+        cd $ROOT_DIR && \
         rm -f $2 && \
         tar zcvf $2 laravel/*
         rm -rf laravel
@@ -41,9 +42,9 @@ make_zip()
 # 提交到latest-laravel
 commit_zip()
 {
-    cd $SCRIPT_DIR
+    cd $ROOT_DIR
     echo "当前目录:`pwd`"
-    git add -A && \
+    git add *.gz && \
     git commit -am "update@$(date +%Y-%m-%d_%H%M%S)" && \
     git pull && \
     git push
@@ -63,29 +64,28 @@ check_and_commit()
 # 报告错误(issue)
 report_error()
 {
+    cd $SCRIPT_DIR
     `node reporter.js`
 }
 
-
-cd $SCRIPT_DIR
 
 # master
 master_output=$(make_zip "master" $MASTER_FILE)
 
 if [[ $? -eq 0 ]]; then
-    echo -e $master_output 2>&1 | tee output
+    echo "$master_output" 2>&1 | tee output
 fi
 
 # master
 develop_output=$(make_zip "develop" $DEVELOP_FILE)
 
 if [[ $? -eq 0 ]]; then
-    echo -e $develop_output  2>&1 | tee output
+    echo "$develop_output"  2>&1 | tee output
 fi
 
 check_and_commit
 
-if [[ -f "./output" ]]; then
+if [[ -f "$SCRIPT_DIR/output" ]]; then
     report_error
     echo "*** 上报错误完成！ ***"
 fi
