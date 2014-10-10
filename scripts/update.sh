@@ -73,14 +73,14 @@ cd $SCRIPT_DIR
 master_output=$(make_zip "master" $MASTER_FILE)
 
 if [[ $? -eq 0 ]]; then
-    echo $master_output > output
+    echo $master_output >> output
 fi
 
 # master
 develop_output=$(make_zip "develop" $DEVELOP_FILE)
 
 if [[ $? -eq 0 ]]; then
-    echo $develop_output > output
+    echo $develop_output >> output
 fi
 
 check_and_commit
