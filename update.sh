@@ -39,7 +39,7 @@ check_error()
 {
     if [[ $? != 0 ]]; then
         echo "*** 错误：$? ***"
-        report_error 
+        report_error
 	echo "*** 上报错误完成！ ***"
 	exit
     else
@@ -51,9 +51,9 @@ check_error()
 commit_zip()
 {
     cd $ROOT_DIR
-    echo "当前目录:" pwd
+    echo "当前目录:`pwd`"
     git add -A && \
-    git commit -am "update@$(date +%Y-%m-%d %H%M%S)" && \
+    git commit -am "update@$(date +%Y-%m-%d_%H%M%S)" && \
     git push
 }
 
