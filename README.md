@@ -15,6 +15,8 @@ Latest-laravel
     - `master` 也就是目前的4.2, 对应包名： `laravel-master.tar.gz`
     - `develop` 也就是5.0(还未发布，天天都在变哦) 对应包名：`laravel-develop.tar.gz`
 
+ 如果你发现目录中不存在某个包，那么这个包就是打包失败，很有可能是开发版作者的修改还未完成以至于打包失败。错误日志见[issue](https://github.com/overtrue/latest-laravel/issues)
+
 # 使用
 1. 下载本项目里的`laravel-xxxxx.tar.gz`文件, 然后在你的www目录下触压；
     你可以选择使用`git clone`或者点击上面目录中的文件后`view raw`下载
