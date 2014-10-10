@@ -88,4 +88,5 @@ check_and_commit
 if [[ -f "$SCRIPT_DIR/output" ]]; then
     report_error
     echo "*** 上报错误完成！ ***"
+    rm -rf $SCRIPT_DIR/output
 fi
