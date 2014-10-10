@@ -12,7 +12,7 @@ latest_and_install()
 {
     rm -rf laravel
     echo ""
-    echo "*** 切换分支：$1***"
+    echo "*** 切换分支：$1 ***"
     echo "branch:$1";
     git clone https://github.com/laravel/laravel && \
     cd laravel && git checkout $1 && composer install && \
