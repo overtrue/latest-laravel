@@ -21,6 +21,6 @@ github.issues.create({
     user: 'overtrue',
     repo: 'latest-laravel',
     title: date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + '  Failed!',
-    body: fs.readFileSync("test","utf-8"),
+    body: fs.readFileSync("output","utf-8"),
     labels: ['error'],
 });

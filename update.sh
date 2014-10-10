@@ -39,9 +39,7 @@ check_error()
 {
     if [[ $? != 0 ]]; then
         echo "*** 错误：$? ***"
-        report_error
-	echo "*** 上报错误完成！ ***"
-	exit
+	    exit
     else
         commit_zip
     fi
@@ -69,3 +67,8 @@ make_zip "master" $MASTER_FILE
 make_zip "develop" $DEVELOP_FILE
 
 check_error
+
+if [[ -f "./output" ]]; then
+    report_error
+    echo "*** 上报错误完成！ ***"
+fi
