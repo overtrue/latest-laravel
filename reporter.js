@@ -1,5 +1,6 @@
+//npm install github
 var GitHubApi = require("github");
-var Overtrue = require('overtrue');
+var overtrue = require('./overtrue');
 var fs = require('fs');
 
 var github = new GitHubApi({
@@ -19,7 +20,7 @@ github.authenticate({
 github.issues.create({
     user: 'overtrue',
     repo: 'latest-laravel',
-    title: 'Failed at '.date.getMonth().'-'.date.getDay(),
+    title: date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + '  Failed!',
     body: fs.readFileSync("test","utf-8"),
     labels: ['error'],
 });
