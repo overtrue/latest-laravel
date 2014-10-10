@@ -7,6 +7,29 @@ DEVELOP_FILE="laravel-develop.tar.gz"
 
 cd $SCRIPT_DIR
 
+# master
+master_output=$(make_zip "master" $MASTER_FILE)
+
+if [[ $? -eq 0 ]]; then
+    echo $master_output > output
+fi
+
+# master
+develop_output=$(make_zip "develop" $DEVELOP_FILE)
+
+if [[ $? -eq 0 ]]; then
+    echo $develop_output > output
+fi
+
+check_and_commit
+
+if [[ -f "./output" ]]; then
+    report_error
+    echo "*** 上报错误完成！ ***"
+fi
+
+####### functions #######
+
 # 更新并安装
 latest_and_install()
 {
@@ -34,17 +57,6 @@ make_zip()
     fi
 }
 
-# 检查错误并提交
-check_error()
-{
-    if [[ $? != 0 ]]; then
-        echo "*** 错误：$? ***"
-	    exit
-    else
-        commit_zip
-    fi
-}
-
 # 提交到latest-laravel
 commit_zip()
 {
@@ -56,20 +68,19 @@ commit_zip()
     git push
 }
 
+# 检查错误并提交
+check_and_commit()
+{
+    if [[ $? != 0 ]]; then
+        echo "*** 错误：$? ***"
+        exit
+    else
+        commit_zip
+    fi
+}
+
 # 报告错误(issue)
 report_error()
 {
     `node reporter.js`
 }
-
-
-make_zip "master" $MASTER_FILE
-# 不用检查错误，或者有一个能更新就更新一个
-make_zip "develop" $DEVELOP_FILE
-
-check_error
-
-if [[ -f "./output" ]]; then
-    report_error
-    echo "*** 上报错误完成！ ***"
-fi
