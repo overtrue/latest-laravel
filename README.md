@@ -23,7 +23,7 @@ Latest-laravel
 
 完成，访问`http://localhost/laravel/public/` 即可看到欢迎页面。
 
-    _如果打开页面感觉慢的话，是因为模板中使用了google字体的原因(不是所谓的框架慢...:joy:)_
+_如果打开页面感觉慢的话，是因为模板中使用了google字体的原因(不是所谓的框架慢...:joy:)_
 
 ## :heavy_exclamation_mark:注意
 `public`目录才是网站根目录，所以如果你要添加虚拟主机请把`document root` 设置到`public`，至于为什么这里不想做过多的解释，你就这么认为就好了。
