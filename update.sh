@@ -39,7 +39,9 @@ check_error()
 {
     if [[ $? != 0 ]]; then
         echo "*** 错误：$? ***"
-        report_error && exit
+        report_error 
+	echo "*** 上报错误完成！ ***"
+	exit
     else
         commit_zip
     fi
@@ -66,3 +68,4 @@ make_zip "master" $MASTER_FILE
 # 不用检查错误，或者有一个能更新就更新一个
 make_zip "develop" $DEVELOP_FILE
 
+check_error
