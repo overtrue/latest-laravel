@@ -37,14 +37,23 @@ check_error()
     fi
 }
 
+# 提交到latest-laravel
+commit_zip()
+{
+    cd $ROOT_DIR
+    echo "current dir:" pwd
+    git add -A
+    git commit -am "update@$(date +%Y_%m_%d_%H%M%S)"
+    git push
+}
+
+report_error()
+{
+    `node reporter.js`
+}
+
+
 make_zip "master" $MASTER_FILE
-
-check_error
-
+# 不用检查错误，或者有一个能更新就更新一个
 make_zip "develop" $DEVELOP_FILE
 
-check_error
-
-git add -A
-git commit -am "update@$(date +%Y_%m_%d_%H%M%S)"
-git push
