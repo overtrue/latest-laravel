@@ -22,6 +22,7 @@ Latest-laravel
 2. 给`storeage`目录的写权限，*unix用户参考：`chmod -R 755 ./storeage`；
 
 完成，访问`http://localhost/laravel/public/` 即可看到欢迎页面。
+
     _如果打开页面感觉慢的话，是因为模板中使用了google字体的原因(不是所谓的框架慢...:joy:)_
 
 ## :heavy_exclamation_mark:注意
