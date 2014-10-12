@@ -90,3 +90,5 @@ if [[ -f "$SCRIPT_DIR/output" ]]; then
     echo "*** 上报错误完成！ ***"
     rm -rf $SCRIPT_DIR/output
 fi
+
+date
