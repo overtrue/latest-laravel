@@ -32,7 +32,7 @@ _如果打开页面感觉慢的话，是因为模板中使用了google字体的�
 
 :bulb: 从`laravel/laravel`更新:inbox_tray: :arrow_right:  使用`composer install`安装依赖 :arrow_right: 打包:package: :arrow_right:  push 到GitHub :outbox_tray:
 
-更多请直接参考脚本：[update.sh](https://github.com/overtrue/latest-laravel/blob/master/update.sh) :sweat_smile: shell功底差，请多指教！
+更多请直接参考脚本：[update.sh](https://github.com/overtrue/latest-laravel/blob/master/scripts/update.sh) :sweat_smile: shell功底差，请多指教！
 
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
