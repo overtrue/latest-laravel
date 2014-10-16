@@ -34,6 +34,9 @@ _如果打开页面感觉慢的话，是因为模板中使用了google字体的�
 
 更多请直接参考脚本：[update.sh](https://github.com/overtrue/latest-laravel/blob/master/scripts/update.sh) :sweat_smile: shell功底差，请多指教！
 
+## 说明
+本项目的前提你还是要满足基本条件才能正常运行Laravel：`php >= 5.4 && mcrypt 拓展`
+
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
 
