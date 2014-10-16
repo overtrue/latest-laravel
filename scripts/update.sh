@@ -16,6 +16,7 @@ DEVELOP_FILE="laravel-develop.tar.gz"
 latest_and_install()
 {
     cd $ROOT_DIR/
+    git pull
     rm -rf laravel
     echo ""
     echo "*** 切换分支：$1 ***"
