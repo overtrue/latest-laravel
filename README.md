@@ -39,10 +39,11 @@ _如果打开页面感觉慢的话，是因为模板中使用了google字体的�
 
 ## 赞助
 本项目运行在DigitalOcean机器上，如果您觉得对你有帮助愿意捐助的话有两种方式：
+
 1. 我的支付宝：joy_chao@yeah.net
 2. 直接转到我的PayPal：anzhengchao@gmail.com
 
-感谢！
+请留下您的名称或者联系方式，感谢！
 
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
