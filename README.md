@@ -36,7 +36,7 @@ _如果打开页面感觉慢的话，是因为模板中使用了google字体的�
 - 本项目的前提你还是要满足基本条件才能正常运行Laravel：`php >= 5.4 && mcrypt 拓展`
 - `public`目录才是网站根目录，所以如果你要添加虚拟主机请把`document root` 设置到`public`，至于为什么这里不想做过多的解释，你就这么认为就好了。
 
-## 赞助
+## 赞助:dollar:
 本项目运行在DigitalOcean机器上，如果您觉得对你有帮助愿意捐助的话有两种方式：
 
 1. 我的支付宝：anzhengchao@gmail.com
