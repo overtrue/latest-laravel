@@ -111,7 +111,7 @@ if [[ $? != 0 ]]; then
     echo "$master_output" 2>&1 | tee $SCRIPT_DIR/output
 fi
 
-# master
+# develop
 develop_output=$(make_zip "develop" $DEVELOP_FILE)
 
 if [[ $? != 0 ]]; then
