@@ -33,6 +33,7 @@ latest_and_install()
         sed -ie "s/'Lato'/Arial, Helvetica/" resources/views/hello.php
     fi
     if [[ -f "app/views/hello.php" ]]; then
+	echo 88;
         sed -ie 's/@import.*//' app/views/hello.php
         sed -ie "s/'Lato'/Arial, Helvetica/" app/views/hello.php
     fi
@@ -106,7 +107,7 @@ report_error()
 clean_repo
 
 # master
-master_output=$(make_zip "master" $MASTER_FILE)
+make_zip "master" $MASTER_FILE
 
 if [[ $? != 0 ]]; then
     echo "$master_output" 2>&1 | tee $SCRIPT_DIR/output
