@@ -76,7 +76,7 @@ check_and_commit()
 report_error()
 {
     cd $SCRIPT_DIR
-    `node reporter.js`
+    `node reporter.js` && rm -rf output
 }
 
 
