@@ -41,7 +41,7 @@ latest_and_install()
 clean_repo()
 {
 
-    cd $ROOT_DIR/laravel
+    cd $ROOT_DIR
 
     echo "*** 清理文件 ***"
 
