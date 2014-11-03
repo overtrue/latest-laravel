@@ -36,6 +36,7 @@ latest_and_install()
     return 0
 }
 
+# 清理git仓库
 clean_repo()
 {
 
