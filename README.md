@@ -1,7 +1,7 @@
 Latest-laravel
 ==============
 
-每天更新的Laravel完整包，下载直接可以运行。
+每天更新的Laravel完整包，下载直接可以运行。 [赞助本项目](#%E8%B5%9E%E5%8A%A9dollar)
 
 - 本项目主要解决以下问题：
 
@@ -23,8 +23,7 @@ Latest-laravel
 
 完成，访问`http://localhost/laravel/public/` 即可看到欢迎页面。
 
-_如果打开页面感觉慢的话，是因为模板中使用了google字体的原因(不是所谓的框架慢...:joy:)_
-
+_本项目打包时会清除首页模板的google字体引用，避免半天打不开首页的情况。_
 
 ## 原理
 
@@ -40,9 +39,9 @@ _如果打开页面感觉慢的话，是因为模板中使用了google字体的�
 本项目运行在DigitalOcean机器上，如果您觉得对你有帮助愿意捐助的话有两种方式：
 
 1. 我的支付宝：anzhengchao@gmail.com
-2. 直接转到我的PayPal：anzhengchao@gmail.com
+2. 直接转到我的PayPal：anzhengchao@gmail.com（有PayPal的朋友推荐使用此方式，免去我找淘宝充PayPal的麻烦:sweat_smile:）
 
-请留下您的名称或者联系方式，感谢！
+请留下您的联系方式，感谢！
 
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
