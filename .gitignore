@@ -1,4 +1,5 @@
 /temp
-*overtrue.js
+scripts/overtrue.js
+scripts/output
 /node_modules
 /laravel

@@ -84,14 +84,14 @@ report_error()
 # master
 master_output=$(make_zip "master" $MASTER_FILE)
 
-if [[ $? -eq 0 ]]; then
+if [[ $? != 0 ]]; then
     echo "$master_output" 2>&1 | tee $SCRIPT_DIR/output
 fi
 
 # master
 develop_output=$(make_zip "develop" $DEVELOP_FILE)
 
-if [[ $? -eq 0 ]]; then
+if [[ $? != 0 ]]; then
     echo "$develop_output"  2>&1 | tee $SCRIPT_DIR/output
 fi
 
