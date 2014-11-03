@@ -25,14 +25,24 @@ Latest-laravel
 
 _如果打开页面感觉慢的话，是因为模板中使用了google字体的原因(不是所谓的框架慢...:joy:)_
 
-## :heavy_exclamation_mark:注意
-`public`目录才是网站根目录，所以如果你要添加虚拟主机请把`document root` 设置到`public`，至于为什么这里不想做过多的解释，你就这么认为就好了。
 
 ## 原理
 
 :bulb: 从`laravel/laravel`更新:inbox_tray: :arrow_right:  使用`composer install`安装依赖 :arrow_right: 打包:package: :arrow_right:  push 到GitHub :outbox_tray:
 
-更多请直接参考脚本：[update.sh](https://github.com/overtrue/latest-laravel/blob/master/update.sh) :sweat_smile: shell功底差，请多指教！
+更多请直接参考脚本：[update.sh](https://github.com/overtrue/latest-laravel/blob/master/scripts/update.sh) :sweat_smile: shell功底差，请多指教！
+
+## 说明
+- 本项目的前提你还是要满足基本条件才能正常运行Laravel：`php >= 5.4 && mcrypt 拓展`
+- `public`目录才是网站根目录，所以如果你要添加虚拟主机请把`document root` 设置到`public`，至于为什么这里不想做过多的解释，你就这么认为就好了。
+
+## 赞助:dollar:
+本项目运行在DigitalOcean机器上，如果您觉得对你有帮助愿意捐助的话有两种方式：
+
+1. 我的支付宝：anzhengchao@gmail.com
+2. 直接转到我的PayPal：anzhengchao@gmail.com
+
+请留下您的名称或者联系方式，感谢！
 
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
