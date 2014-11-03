@@ -20,20 +20,21 @@ latest_and_install()
     if [[ -d "laravel" ]]; then
         rm -rf laravel
     fi
+
     echo ""
     echo "*** 切换分支：$1 ***"
     echo "branch:$1"
-    git clone https://github.com/laravel/laravel --depth=1 && \
+    git clone https://github.com/laravel/laravel --depth=1
     cd laravel && git checkout $1 && composer install
 
     # 替换掉google字体
     if [[ -f "resources/views/hello.php" ]]; then
         sed -ie 's/@import.*//' resources/views/hello.php
-        sed -ie "s/'Lato'/Arial, Helvetica/" resources/views/hello.php
+        sed -ie "s/\'Lato\'/Arial, Helvetica/" resources/views/hello.php
     fi
     if [[ -f "app/views/hello.php" ]]; then
         sed -ie 's/@import.*//' app/views/hello.php
-        sed -ie "s/'Lato'/Arial, Helvetica/" app/views/hello.php
+        sed -ie "s/\'Lato\'/Arial, Helvetica/" app/views/hello.php
     fi
 
     return 0
