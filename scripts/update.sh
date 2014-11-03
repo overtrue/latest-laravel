@@ -16,7 +16,7 @@ DEVELOP_FILE="laravel-develop.tar.gz"
 latest_and_install()
 {
     cd $ROOT_DIR/
-    clean_repo
+
     if [[ -d "laravel" ]]; then
         rm -rf laravel
     fi
@@ -101,6 +101,7 @@ report_error()
     `node reporter.js` && rm -rf output
 }
 
+clean_repo
 
 # master
 master_output=$(make_zip "master" $MASTER_FILE)
