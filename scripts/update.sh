@@ -22,7 +22,7 @@ latest_and_install()
     echo "*** 切换分支：$1 ***"
     echo "branch:$1";
     git clone --depth=1 https://github.com/laravel/laravel && \
-    cd laravel && git checkout $1 && composer install
+    cd laravel && clean_repo && git checkout $1 && composer install
 
     # 替换掉google字体
     if [[ $1 -eq "develop" ]]; then
@@ -34,6 +34,21 @@ latest_and_install()
     fi
 
     return 0
+}
+
+clean_repo()
+{
+
+    cd $ROOT_DIR/laravel
+
+    echo "*** 清理文件 ***"
+
+    git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch *.tar.gz' --prune-empty --tag-name-filter cat -- --all && \
+    git push origin --force --all && \
+    git push origin --force --tags && \
+    git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin && \
+    git reflog expire --expire=now --all && \
+    git gc --prune=now
 }
 
 # 打包
@@ -60,13 +75,7 @@ commit_zip()
     git add *.gz && \
     git commit -am "update@$(date +%Y-%m-%d_%H%M%S)" && \
     git pull && \
-    git push && \
-    git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch *.tar.gz' HEAD^2 HEAD^1 && \
-    git push origin master --force && \
-    rm -rf .git/refs/original/ && \
-    git reflog expire --expire=now --all && \
-    git gc --prune=now && \
-    git gc --aggressive --prune=now && \
+    git push
 }
 
 # 检查错误并提交
