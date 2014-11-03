@@ -45,7 +45,7 @@ clean_repo()
     cd $ROOT_DIR
 
     echo "*** 清理文件 ***"
-
+    git pull && \
     git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch *.tar.gz' --prune-empty --tag-name-filter cat -- --all && \
     git push origin --force --all && \
     git push origin --force --tags && \
