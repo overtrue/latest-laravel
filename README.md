@@ -25,6 +25,8 @@ Latest-laravel
 
 _本项目打包时会清除首页模板的google字体引用，避免半天打不开首页的情况。_
 
+>>>>>>> f371fa002d8e20f82e21a93f21cabd6a1600e7f3
+
 ## 原理
 
 :bulb: 从`laravel/laravel`更新:inbox_tray: :arrow_right:  使用`composer install`安装依赖 :arrow_right: 打包:package: :arrow_right:  push 到GitHub :outbox_tray:
