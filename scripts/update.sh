@@ -22,7 +22,7 @@ latest_and_install()
     fi
     echo ""
     echo "*** 切换分支：$1 ***"
-    echo "branch:$1";
+    echo "branch:$1"
     git clone https://github.com/laravel/laravel --depth=1 && \
     cd laravel && git checkout $1 && composer install
 
