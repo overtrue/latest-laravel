@@ -48,7 +48,7 @@ clean_repo()
     git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch *.tar.gz' --prune-empty --tag-name-filter cat -- --all && \
     git push origin --force --all && \
     git push origin --force --tags && \
-    git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin && \
+    rm -rf .git/refs/original/ && \
     git reflog expire --expire=now --all && \
     git gc --prune=now
 }
