@@ -67,8 +67,7 @@ make_zip()
         echo "*** 开始打包：$2 ***"
         cd $ROOT_DIR && \
         rm -f $2 && \
-        # tar zcf $2 laravel/*
-        cd laravel && git archive --format=tar HEAD | gzip > $ROOT_DIR/$2
+        rm -rf laravel/.git && tar zcf $2 laravel/*
         cd ../ && rm -rf laravel
         echo "*** 打包完毕：$2 ***"
     fi
