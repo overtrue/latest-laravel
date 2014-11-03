@@ -33,6 +33,7 @@ latest_and_install()
         sed -ie "s/'Lato'/Arial, Helvetica/" app/views/hello.php
     fi
 
+    return 0
 }
 
 # 打包
