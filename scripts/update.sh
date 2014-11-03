@@ -16,7 +16,6 @@ DEVELOP_FILE="laravel-develop.tar.gz"
 latest_and_install()
 {
     cd $ROOT_DIR/
-    git pull  && \
     clean_repo
     rm -rf laravel
     echo ""
