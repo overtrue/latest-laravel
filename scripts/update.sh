@@ -17,11 +17,13 @@ latest_and_install()
 {
     cd $ROOT_DIR/
     clean_repo
-    rm -rf laravel
+    if [[ -f "laravel" ]]; then
+        rm -rf laravel
+    fi
     echo ""
     echo "*** 切换分支：$1 ***"
     echo "branch:$1";
-    git clone --depth=1 https://github.com/laravel/laravel && \
+    git clone https://github.com/laravel/laravel --depth=1 && \
     cd laravel && git checkout $1 && composer install
 
     # 替换掉google字体
@@ -50,7 +52,8 @@ clean_repo()
     rm -rf .git/refs/original/ && \
     git reflog expire --expire=now --all && \
     git gc --prune=now
-    exit
+
+    return 0
 }
 
 # 打包
