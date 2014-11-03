@@ -21,7 +21,7 @@ latest_and_install()
     echo ""
     echo "*** 切换分支：$1 ***"
     echo "branch:$1";
-    git clone https://github.com/laravel/laravel && \
+    git clone --depth=1 https://github.com/laravel/laravel && \
     cd laravel && git checkout $1 && composer install
 
     # 替换掉google字体
@@ -45,7 +45,8 @@ make_zip()
         echo "*** 开始打包：$2 ***"
         cd $ROOT_DIR && \
         rm -f $2 && \
-        tar zcf $2 laravel/*
+        # tar zcf $2 laravel/*
+        cd laravel && git archive $2
         rm -rf laravel
         echo "*** 打包完毕：$2 ***"
     fi
@@ -59,7 +60,13 @@ commit_zip()
     git add *.gz && \
     git commit -am "update@$(date +%Y-%m-%d_%H%M%S)" && \
     git pull && \
-    git push
+    git push && \
+    git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch *.tar.gz' HEAD^2 HEAD^1 && \
+    git push origin master --force && \
+    rm -rf .git/refs/original/ && \
+    git reflog expire --expire=now --all && \
+    git gc --prune=now && \
+    git gc --aggressive --prune=now && \
 }
 
 # 检查错误并提交
