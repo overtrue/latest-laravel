@@ -16,13 +16,14 @@ DEVELOP_FILE="laravel-develop.tar.gz"
 latest_and_install()
 {
     cd $ROOT_DIR/
-    git pull
+    git pull  && \
+    clean_repo
     rm -rf laravel
     echo ""
     echo "*** 切换分支：$1 ***"
     echo "branch:$1";
     git clone --depth=1 https://github.com/laravel/laravel && \
-    cd laravel && clean_repo && git checkout $1 && composer install
+    cd laravel && git checkout $1 && composer install
 
     # 替换掉google字体
     if [[ $1 -eq "develop" ]]; then
