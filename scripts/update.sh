@@ -17,7 +17,7 @@ latest_and_install()
 {
     cd $ROOT_DIR/
     clean_repo
-    if [[ -f "laravel" ]]; then
+    if [[ -d "laravel" ]]; then
         rm -rf laravel
     fi
     echo ""
