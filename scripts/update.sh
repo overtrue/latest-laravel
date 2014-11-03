@@ -84,22 +84,14 @@ report_error()
 master_output=$(make_zip "master" $MASTER_FILE)
 
 if [[ $? -eq 0 ]]; then
-<<<<<<< HEAD
     echo "$master_output" 2>&1 | tee $SCRIPT_DIR/output
-=======
-    echo "$master_output" 2>&1 | tee output
->>>>>>> 1291e9d... update@2014-10-10_094432
 fi
 
 # master
 develop_output=$(make_zip "develop" $DEVELOP_FILE)
 
 if [[ $? -eq 0 ]]; then
-<<<<<<< HEAD
     echo "$develop_output"  2>&1 | tee $SCRIPT_DIR/output
-=======
-    echo "$develop_output"  2>&1 | tee output
->>>>>>> 1291e9d... update@2014-10-10_094432
 fi
 
 check_and_commit
