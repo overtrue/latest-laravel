@@ -26,7 +26,7 @@ latest_and_install()
     cd laravel && git checkout $1 && composer install
 
     # 替换掉google字体
-    if [[ $1 -eq "develop" ]]; then
+    if [[ $1 == "develop" ]]; then
         sed -ie 's/@import.*//' resources/views/hello.php && \
         sed -ie "s/'Lato'/Arial, Helvetica/" resources/views/hello.php
     else
