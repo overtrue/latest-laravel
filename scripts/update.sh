@@ -29,12 +29,12 @@ latest_and_install()
 
     # 替换掉google字体
     if [[ -f "resources/views/hello.php" ]]; then
-        sed -ie 's/@import.*//' resources/views/hello.php
-        sed -ie "s/'Lato'/Arial, Helvetica/" resources/views/hello.php
+        sed -i 's/@import.*//' resources/views/hello.php
+        sed -i "s/'Lato'/Arial, Helvetica/" resources/views/hello.php
     fi
     if [[ -f "app/views/hello.php" ]]; then
-        sed -ie 's/@import.*//' app/views/hello.php
-        sed -ie "s/'Lato'/Arial, Helvetica/" app/views/hello.php
+        sed -i 's/@import.*//' app/views/hello.php
+        sed -i "s/'Lato'/Arial, Helvetica/" app/views/hello.php
     fi
 
     return 0
