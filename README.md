@@ -43,6 +43,9 @@ _本项目打包时会清除首页模板的google字体引用，避免半天打�
 
 请留下您的联系方式，感谢！
 
+感谢以下朋友的赞助：
+- 王赛([@wangsai](https://github.com/wangsai))  ￥100 
+
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
 
