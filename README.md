@@ -45,8 +45,10 @@ _本项目打包时会清除首页模板的google字体引用，避免半天打�
 
 感谢以下朋友的赞助：
 
-|| *名称* || *金额* ||
-|| 王赛([@wangsai](https://github.com/wangsai)) || ￥100 ||
+<table>
+<tr><th>名称</th><th>金额</th><tr>
+<tr><td>王赛([@wangsai](https://github.com/wangsai))</td><td>￥100</td>
+</table>
 
 ## 关于Laravel
 请参考：http://laravel.com/ 或者 中文版:http://www.golaravel.com/
