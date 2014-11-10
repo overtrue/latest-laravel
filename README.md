@@ -3,7 +3,7 @@ Latest-laravel
 
 每天更新的Laravel完整包，下载直接可以运行。 [赞助本项目](#%E8%B5%9E%E5%8A%A9dollar)
 
-- 本项目主要解决以下问题：
+- 主要解决的问题：
 
     - 不会用`composer`或者不太会用；
     - `composer` 装不上或者装上了但是`composer install`特别慢。
@@ -36,7 +36,7 @@ _本项目打包时会清除首页模板的google字体引用，避免半天打�
 - `public`目录才是网站根目录，所以如果你要添加虚拟主机请把`document root` 设置到`public`，至于为什么这里不想做过多的解释，你就这么认为就好了。
 
 ## 赞助:dollar:
-本项目运行在DigitalOcean机器上，如果您觉得对你有帮助愿意捐助的话有两种方式：
+本项目运行在crissic机器上，如果您觉得对你有帮助愿意捐助的话有两种方式：
 
 1. 我的支付宝：anzhengchao@gmail.com
 2. 直接转到我的PayPal：anzhengchao@gmail.com（有PayPal的朋友推荐使用此方式，免去我找淘宝充PayPal的麻烦:sweat_smile:）
