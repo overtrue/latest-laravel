@@ -47,7 +47,7 @@ _本项目打包时会清除首页模板的google字体引用，避免半天打�
 
 <table>
 <tr><th>名称</th><th>金额</th><tr>
-<tr><td> 王赛<a href="https://github.com/wangsai">@wangsai</a></td><td>￥100</td>
+<tr><td> Laravel中文网创始人 王赛<a href="https://github.com/wangsai">@wangsai</a></td><td>￥100</td>
 </table>
 
 ## 关于Laravel
