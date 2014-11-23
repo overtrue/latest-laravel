@@ -1,7 +1,7 @@
 Latest-laravel
 ==============
 
-每天更新的Laravel完整包，下载直接可以运行。 [赞助本项目](#%E8%B5%9E%E5%8A%A9dollar)
+每天更新的Laravel完整包，下载直接可以运行(已经`composer install`了,也就是已经有了vendor目录)。 [赞助本项目](#%E8%B5%9E%E5%8A%A9dollar)
 
 - 主要解决的问题：
 
