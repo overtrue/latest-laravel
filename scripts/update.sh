@@ -104,6 +104,8 @@ report_error()
 
 clean_repo
 
+composer selfupdate
+
 # master
 master_output=$(make_zip "master" $MASTER_FILE)
 
