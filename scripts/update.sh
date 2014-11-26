@@ -109,14 +109,14 @@ composer selfupdate
 # master
 master_output=$(make_zip "master" $MASTER_FILE)
 
-if [[ $? != 0 ]]; then
+if [[ $? != 0 || "stat -c %s laravel-master.tar.gz" < 3000000 ]]; then
     echo "$master_output" 2>&1 | tee $SCRIPT_DIR/output
 fi
 
 # develop
 develop_output=$(make_zip "develop" $DEVELOP_FILE)
 
-if [[ $? != 0 ]]; then
+if [[ $? != 0 || "stat -c %s laravel-develop.tar.gz" < 3000000  ]]; then
     echo "$develop_output"  2>&1 | tee $SCRIPT_DIR/output
 fi
 
