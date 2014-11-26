@@ -25,7 +25,7 @@ latest_and_install()
     echo "*** 切换分支：$1 ***"
     echo "branch:$1"
     git clone https://github.com/laravel/laravel --depth=1
-    cd laravel && git checkout $1 && composer install
+    cd laravel && git checkout $1 && composer install && git add -A
 
     # 替换掉google字体
     if [[ -f "resources/views/hello.php" ]]; then
