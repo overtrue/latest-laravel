@@ -28,13 +28,8 @@ latest_and_install()
     cd laravel && git checkout $1 && composer install
 
     # 替换掉google字体
-    if [[ -f "resources/views/hello.php" ]]; then
-        sed -i 's/@import.*//' resources/views/hello.php
-        sed -i "s/'Lato'/Arial, Helvetica/" resources/views/hello.php
-    fi
-    if [[ -f "app/views/hello.php" ]]; then
-        sed -i 's/@import.*//' app/views/hello.php
-        sed -i "s/'Lato'/Arial, Helvetica/" app/views/hello.php
+    if [[ -f "resources/views/welcome.blade.php" ]]; then
+        sed -i "s/<link href='\/\/fonts.googleapis.com.*?>//" resources/views/welcome.blade.php
     fi
 
     return 0
