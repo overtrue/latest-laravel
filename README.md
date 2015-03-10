@@ -14,7 +14,7 @@ Latest-laravel
 - 版本
     - `master` 也就是目前的 `5.*`， 对应包名： `laravel-master.tar.gz`
     - `develop` 开发版，对应包名：`laravel-develop.tar.gz`
-    - 无 4.x 系列
+    - 无 `4.x` 系列
 
  如果你发现目录中不存在某个包，那么这个包就是打包失败，很有可能是开发版作者的修改还未完成以至于打包失败。错误日志见[issue](https://github.com/overtrue/latest-laravel/issues)
 
