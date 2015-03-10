@@ -19,7 +19,7 @@ Latest-laravel
 
 # 使用
 1. 下载本项目里的 `laravel-xxxxx.tar.gz` 文件, 然后在你的 www 目录下触压；
-2. 给 `storeage` 目录的写权限，*unix 用户参考：`chmod -R 755 ./storeage`；
+2. 给 `storage` 目录的写权限，*unix 用户参考：`chmod -R 755 ./storage`；
 
 完成，访问 `http://localhost/laravel/public/` 即可看到欢迎页面。
 
