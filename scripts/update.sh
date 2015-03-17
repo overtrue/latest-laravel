@@ -31,6 +31,8 @@ latest_and_install()
     if [[ -f "resources/views/welcome.blade.php" ]]; then
         sed -i "s/<link href='\/\/fonts.googleapis.com.*?>//" resources/views/welcome.blade.php
     fi
+    
+    cp .env.example .env
 
     return 0
 }
