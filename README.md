@@ -3,6 +3,17 @@ Latest-laravel
 
 [latest-lumen](https://github.com/overtrue/latest-lumen)
 
+#【此项目已经停止】
+#【此项目已经停止】
+#【此项目已经停止】
+
+最近与一些程序员沟通后发现，大部分国内程序员真的是很难理解，那么懒惰，composer 不会用，上了N年的班连个翻墙都不会...
+
+都 PHP7 时代了连 PHP 5.3 的语法都不会... 这怪谁？不思进取。罢了，爱怎么玩怎么玩吧。
+
+
+---
+
 每天更新的 Laravel 不同分支的完整包，下载直接可以运行（已经 `composer install` 了，也就是已经有了vendor目录）。
 
 - 主要解决的问题：
