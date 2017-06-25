@@ -7,6 +7,15 @@ Latest-laravel
 
 #【此项目已经停止】
 
+<p align="center">
+  <br>
+  <b>创造不息，交付不止</b>
+  <br>
+  <a href="https://www.yousails.com">
+    <img src="https://yousails.com/banners/brand.png" width=350>
+  </a>
+</p>
+
 ---
 
 每天更新的 Laravel 不同分支的完整包，下载直接可以运行（已经 `composer install` 了，也就是已经有了vendor目录）。
